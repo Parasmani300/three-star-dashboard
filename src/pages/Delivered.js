@@ -8,14 +8,14 @@ export default function Delivered() {
   const [search,setSearch] = useState("");
 
   const fetchOrder = async() => {
-    const url = "http://localhost:8080/order/getDeliveredOrder";
+    const url = "https://server-x.vercel.app/order/getDeliveredOrder";
     const snapShotRef = await axios.get(url);
     const snapshot = await snapShotRef.data;
     setData(snapshot);
   }
 
   const fetchOrderById = async() => {
-    const url = `http://localhost:8080/order/getOrderById?uid=${search}`;
+    const url = `https://server-x.vercel.app/order/getOrderById?uid=${search}`;
     const snapShotRef = await axios.get(url);
     const snapshot = await snapShotRef.data;
     setData(snapshot);

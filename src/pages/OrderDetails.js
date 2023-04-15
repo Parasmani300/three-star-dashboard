@@ -7,7 +7,7 @@ export default function () {
     const [shipped,setShipped] = useState(false);
 
     const updateStatus = async() => {
-        const url = `http://localhost:8080/order/changeOrderStatus?uid=${location.state.order.orderId}&status=${location.state.order.status == 'Ordered'?'Shipped':'Delivered'}`;
+        const url = `https://server-x.vercel.app/order/changeOrderStatus?uid=${location.state.order.orderId}&status=${location.state.order.status == 'Ordered'?'Shipped':'Delivered'}`;
         const update = await axios.put(url);
         const data = await update.status;
         console.log(data);

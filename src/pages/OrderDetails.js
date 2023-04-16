@@ -23,6 +23,7 @@ export default function () {
             <h1>{location.state.order.item.name}</h1>
         </div>
         <div className='card-body'>
+        <img src={location.state.order.item.full_image}  />
         <p><b> OrderId: </b> {location.state.order.orderId} </p>
         <p><b> Customer Name: </b> {location.state.order.name} </p>
         <p><b> Price: </b> {location.state.order.item.price} </p>
@@ -33,6 +34,9 @@ export default function () {
         <p><b> Address: </b> {location.state.order.address} </p>
         <p><b> Addition message: </b> {location.state.order.message}</p>
         <p><b> Current Status: </b> {location.state.order.status} </p>
+        <p><b> Contact: </b> {location.state.order.phone} </p>
+        <p><b> Email: </b> {location.state.order.email} </p>
+        
         {location.state.order.status == 'Ordered'  &&<button className='btn btn-primary' onClick={()=>updateStatus()} disabled={shipped}>{shipped?"Shipped":"Ship Item"}</button>}
         {location.state.order.status == 'Shipped'  &&<button className='btn btn-primary' onClick={()=>updateStatus()} disabled={shipped}>{shipped?"Delivered":"Deliver Item"}</button>}
         </div>
